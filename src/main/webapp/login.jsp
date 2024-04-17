@@ -6,7 +6,6 @@
 -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.lwh.bean.Student" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +39,7 @@
 </head>
 <body>
     <h2>Login</h2>
-    <form action="LoginServlet" method="post">
+    <form action="/demo_war/login" method="post">
         <div>
             <label for="stuno">学号：</label>
             <input type="text" id="stuno" name="stuno" required>
@@ -53,6 +52,5 @@
             <button type="submit">登录</button>
         </div>
     </form>
-    <a  href="Home.jsp">返回</a>
 </body>
 </html>
