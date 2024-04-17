@@ -9,34 +9,44 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>主页</title>
+    <title>lwh主页导航</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5e2ae;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
 </head>
-<style>
-    h1{
-        text-align: center;
-    }
-    a{
-        display: block;
-        width: 100px;
-        margin: 0 auto;
-        text-align: center;
-        text-decoration: none;
-        color: #000;
-        background-color: #f5f5f5;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 5px;
-        margin-top: 10px;
-    }
-    a:hover{
-        background-color: #e5e5e5;
-    }
-</style>
 <body>
-<h1>添加图书</h1>
-<a href="add_book.jsp">添加图书</a>
-<h1>查询和修改</h1>
-<a href="query_book.jsp">查询和修改</a>
-
+    <div class="navbar">
+        <a href="add_book.jsp">添加图书</a>
+        <a href="query_book.jsp">查询和修改图书</a>
+    </div>
+    <div class="content">
+        <h1>欢迎来到主页</h1>
+        <p>使用上方导航栏进行操作</p>
+    </div>
 </body>
 </html>
