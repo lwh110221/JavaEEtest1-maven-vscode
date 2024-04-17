@@ -24,10 +24,9 @@ public class BookDAOImpl implements BookDAO {
     public void addBook(Book book) {
         try (Connection connection = JDBCutil.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
-                     "INSERT INTO t_book (bookid, bookname, bookprice) VALUES (?, ?, ?)")) {
-            preparedStatement.setString(1, book.getBookid());
-            preparedStatement.setString(2, book.getBookname());
-            preparedStatement.setDouble(3, book.getBookprice());
+                     "INSERT INTO t_book (bookname, bookprice) VALUES (?,?)")) {
+            preparedStatement.setString(1, book.getBookname());
+            preparedStatement.setDouble(2, book.getBookprice());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -50,7 +49,7 @@ public class BookDAOImpl implements BookDAO {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Book book = new Book();
-                book.setBookid(resultSet.getString("bookid"));
+                book.setBookid(resultSet.getInt("bookid"));
                 book.setBookname(resultSet.getString("bookname"));
                 book.setBookprice(resultSet.getDouble("bookprice"));
                 books.add(book);
