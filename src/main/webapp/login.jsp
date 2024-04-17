@@ -38,15 +38,15 @@
     </style>
 </head>
 <body>
-    <h2>Login</h2>
-    <form action="/demo_war/login" method="post">
+    <h2>登录</h2>
+    <form action="/login" method="post">
         <div>
-            <label for="stuno">学号：</label>
-            <input type="text" id="stuno" name="stuno" required>
+            <label for="stuno">用户名：</label>
+            <input type="text" id="stuno" name="stuno">
         </div>
         <div>
             <label for="stupassword">密码：</label>
-            <input type="password" id="stupassword" name="stupassword" required>
+            <input type="password" id="stupassword" name="stupassword">
         </div>
         <div>
             <button type="submit">登录</button>

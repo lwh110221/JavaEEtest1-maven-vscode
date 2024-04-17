@@ -1,0 +1,36 @@
+package com.lwh.servlet;
+
+import com.lwh.bean.Student;
+import com.lwh.dao.StudentDAO;
+import com.lwh.dao.impl.StudentDAOImpl;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/**
+ * @author : Luowenhao221
+ * @date : 2024/4/18 0:55
+ * @Project : demo
+ */
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
+    private StudentDAO studentDAO = new StudentDAOImpl();
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String stuno = request.getParameter("stuno");
+        String stupassword = request.getParameter("stupassword");
+
+        Student student = studentDAO.login(stuno, stupassword);
+
+        if (student != null) {
+            request.getSession().setAttribute("student", student);
+            response.sendRedirect("/main.jsp");
+        } else {
+            response.sendRedirect("/login.jsp");
+        }
+    }
+}
