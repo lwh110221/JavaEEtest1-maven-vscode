@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("student", student);
             response.sendRedirect("/main.jsp");
         } else {
+            request.getSession().setAttribute("错误", "请输入学号和密码");
             response.sendRedirect("/login.jsp");
         }
     }
