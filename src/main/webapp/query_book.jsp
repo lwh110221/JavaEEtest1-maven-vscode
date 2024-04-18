@@ -15,68 +15,72 @@
     <title>查询书籍</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #cbf1ff;
             margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .search-container {
-            width: 80%;
-            max-width: 800px;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
+
+        .search-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+
         h2 {
-            margin-bottom: 20px;
             color: #333;
         }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        input {
-            width: 80%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        input[type="submit"] {
-            width: 50%;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
+
         table, th, td {
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
         }
-        th, td {
+
+        th {
+            background-color: #f8f8f8;
             padding: 10px;
             text-align: left;
         }
-        th {
-            background-color: #f2f2f2;
+
+        td {
+            padding: 10px;
+            text-align: left;
         }
+
+        input[type=number], input[type=submit] {
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type=submit] {
+            background-color: #5cb85c;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #4cae4c;
+        }
+
+        a {
+            text-decoration: none;
+            color: #5cb85c;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
