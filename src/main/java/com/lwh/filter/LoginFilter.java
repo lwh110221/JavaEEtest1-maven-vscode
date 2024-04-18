@@ -23,7 +23,7 @@ public class LoginFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         String uri = req.getRequestURI();
-        if (uri.contains("/login.jsp") || uri.contains("/login") || uri.contains("/css/") || uri.contains("/js/") || uri.contains("/images/")) {
+        if (uri.contains("/login.jsp") || uri.contains("/login") || uri.contains("/resources/css/") || uri.contains("resources/fonts/") || uri.contains("resources/img/")) {
             chain.doFilter(request, response);
         } else {
             Object student = req.getSession().getAttribute("student");
