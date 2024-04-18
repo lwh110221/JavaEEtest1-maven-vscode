@@ -77,8 +77,8 @@
 </head>
 <body>
 <h1>添加图书</h1>
-<a href="main.jsp">返回导航</a>
 <div class="main">
+    <a href="main.jsp">返回导航</a>
     <form action="addBook" accept-charset="UTF-8" method="post">
         书名: <input type="text" name="bookname"><br>
         价格: <input type="number" step="0.01" name="bookprice"><br>
