@@ -7,6 +7,7 @@
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.lwh.bean.Student" %>
 <html>
 <head>
     <title>lwh主页导航</title>
@@ -37,16 +38,44 @@
         .content {
             padding: 20px;
         }
+        .logining {
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .logintext {
+            text-align: left;
+
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
         <a href="add_book.jsp">添加图书</a>
         <a href="query_book.jsp">查询和修改图书</a>
+        <a href="logout">退出登录</a>
     </div>
     <div class="content">
         <h1>欢迎来到主页</h1>
         <p>使用上方导航栏进行操作</p>
+    </div>
+    <div class="logining">
+        <%
+            Student student = (Student) session.getAttribute("student");
+            if (student != null) {
+        %>
+        <div class="logintext">
+            当前用户:
+            <p>姓名: <%= student.getStuname() %></p>
+            <p>学号: <%= student.getStuno() %></p>
+            <p>性别: <%= student.getStusex() %></p>
+        </div>
+        <%
+            }
+        %>
     </div>
 </body>
 </html>
