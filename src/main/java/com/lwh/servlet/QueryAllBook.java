@@ -26,11 +26,12 @@ import java.util.List;
 public class QueryAllBook extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    String bookName = req.getParameter("bookName");
-    BookDAO bookDAO = new BookDAOImpl();
-    List<Book> books = bookDAO.getBooksByName(bookName);
-    req.setAttribute("books", books);
-    req.getRequestDispatcher("bookList.jsp").forward(req, resp);
+        //查询所有图书
+        String bookName = new String(req.getParameter("bookName").getBytes("ISO-8859-1"), "UTF-8");
+        BookDAO bookDAO = new BookDAOImpl();
+        List<Book> books = bookDAO.getBooksByName(bookName);
+        req.setAttribute("books", books);
+        req.getRequestDispatcher("bookList.jsp").forward(req, resp);
     }
 
 }
