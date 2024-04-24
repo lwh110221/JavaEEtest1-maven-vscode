@@ -18,4 +18,7 @@ public interface BookDAO {
     List<Book> getBooksByPriceRange(double minPrice, double maxPrice);
     //修改书籍价格
     void updateBookPrice(String bookid, double newPrice);
+
+    //获取所有图书
+    List<Book> getBooksByName(String bookname);
 }

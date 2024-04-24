@@ -76,5 +76,28 @@ public class BookDAOImpl implements BookDAO {
         }
     }
 
-    
+    /**
+     * 获取所有图书
+     * @return
+     */
+    @Override
+    public List<Book> getBooksByName(String name) {
+        List<Book> books = new ArrayList<>();
+        try (Connection connection = JDBCutil.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(
+                     "SELECT * FROM t_book WHERE bookname LIKE ?")) {
+            preparedStatement.setString(1, "%" + name + "%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Book book = new Book();
+                book.setBookid(resultSet.getInt("bookid"));
+                book.setBookname(resultSet.getString("bookname"));
+                book.setBookprice(resultSet.getDouble("bookprice"));
+                books.add(book);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return books;
+    }
 }

@@ -56,6 +56,7 @@
     <div class="navbar">
         <a href="add_book.jsp">添加图书</a>
         <a href="query_book.jsp">查询和修改图书</a>
+        <a href="bookList.jsp">查询所有图书</a>
         <a href="logout">退出登录</a>
     </div>
     <div class="content">
