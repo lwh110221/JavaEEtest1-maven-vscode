@@ -30,8 +30,9 @@
     <div class="wrap-login100">
       <div class="login100-pic js-tilt" data-tilt>
         <img src="/resources/img/img-01.png" alt="IMG">
+
       </div>
-      <a href="https://github.com/lwh110221/JavaEEtest1-maven-vscode">GitHub主页</a>
+
       <form class="login100-form validate-form" action="/login" method="post">
 				<span class="login100-form-title">
 					登录
@@ -41,7 +42,7 @@
           <input class="input100" type="text" name="stuno" placeholder="学号">
           <span class="focus-input100"></span>
           <span class="symbol-input100">
-						<i class="fa fa-envelope" aria-hidden="true"></i>
+						<i class="fa fa-user" aria-hidden="true"></i>
 					</span>
         </div>
 
